@@ -1,3 +1,5 @@
-# hello-world
-This is my first repository. Yay.
-So I am pretty new to this whole GitHub thing, so far it sounds pretty neat.
+# All my Python3 Challenges.
+
+Hi, this is a collection of my beginner to intermediate python problems.
+The main focus is on arrays and functions.
+I hope you find this useful.
