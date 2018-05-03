@@ -1,4 +1,4 @@
-n = 44
+n = int(input())
 
 def primeFacs(num):
     x = [] #array to store all factors (prime and non-prime)
@@ -17,3 +17,4 @@ def primeFacs(num):
 
 
 print(primeFacs(770))
+input()
