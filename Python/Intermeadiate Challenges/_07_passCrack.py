@@ -1,22 +1,34 @@
-pasw = 'abc'
-count = 0
-guess = ''
-alpha = 'abcdefghijklmnopqrstuvwxyz' #only limeted myself to lowercase for simplicity.
-x = []
+import math
+global guess
 
-def merge(array): #array to string
-    for i in range(len(array)):
-        guess += array[i]
-    return guess
+pasw = str(input('Input password: '))
+chars = 'abcdefghijklmnopqrstuvwxyz' #only limeted myself to lowercase for simplllicity.
+base = len(chars)+1
+
+def cracker(pasw):
+    guess = ''
+    tests = 1
+    c = 0
+    m = 0
+
+    while True:
+        y = tests
+        while True:
+            c = y % base
+            m = math.floor((y - c) / base)
+            y = m
+            guess = chars[(c - 1)] + guess
+            print(guess)
+            if m == 0:
+                break
+
+        if guess == pasw:
+            print('Got "{}" after {} tests'.format(guess, str(tests)))
+            break
+        else:
+            tests += 1
+            guess = ''
 
 
-for i in range(len(pasw)): #creates a 'starting position'
-    x.append[alpha[0]]
-    guess += x[i]
-
-
-# while guess != pasw:
-for i in range(len(alpha)):
-    if guess != pasw:
-
-    count += 1
+cracker(pasw)
+input()
