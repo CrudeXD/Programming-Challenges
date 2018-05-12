@@ -1,6 +1,6 @@
 import webbrowser
 
-sites = ['youtube', 'github', 'netflix']
+sites = ['youtube', 'github']
 
 for i in range(len(sites)):
     visit = 'https://{}.com/'.format(sites[i])

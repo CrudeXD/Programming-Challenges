@@ -1,9 +1,34 @@
-pasw = 'abc'
-tests = 0
-guess = ''
-alpha = 'abcdefghijklmnopqrstuvwxyz'
+import math
+global guess
+
+pasw = str(input('Input password: '))
+chars = 'abcdefghijklmnopqrstuvwxyz' #only limeted myself to lowercase for simplllicity.
+base = len(chars)+1
+
+def cracker(pasw):
+    guess = ''
+    tests = 1
+    c = 0
+    m = 0
+
+    while True:
+        y = tests
+        while True:
+            c = y % base
+            m = math.floor((y - c) / base)
+            y = m
+            guess = chars[(c - 1)] + guess
+            print(guess)
+            if m == 0:
+                break
+
+        if guess == pasw:
+            print('Got "{}" after {} tests'.format(guess, str(tests)))
+            break
+        else:
+            tests += 1
+            guess = ''
 
 
-while guess != pasw:
-    for i in range(len(pasw)):
-        #This is harder than I thought!!!
+cracker(pasw)
+input()
