@@ -2,8 +2,9 @@ import math
 global guess
 
 pasw = str(input('Input password: '))
-chars = 'abcdefghijklmnopqrstuvwxyz' #only limeted myself to lowercase for simplllicity.
+chars = 'abcdefghijklmnopqrstuvwxyz'  # only limeted myself to lowercase for simplllicity.
 base = len(chars)+1
+
 
 def cracker(pasw):
     guess = ''
