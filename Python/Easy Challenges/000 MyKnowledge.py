@@ -1,3 +1,3 @@
-x = "Weed is better"
+x = "Memes are great"
 x = x.split()
 print(x)
