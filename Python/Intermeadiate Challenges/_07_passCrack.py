@@ -1,12 +1,16 @@
 import math
 global guess
+import time
+import stopwatch
+
 
 pasw = str(input('Input password: '))
-chars = 'abcdefghijklmnopqrstuvwxyz'  # only limeted myself to lowercase for simplllicity.
+chars = 'abcdefghijklmnopqrstuvwxyz'  # only limeted myself to lowercase for simpllicity.
 base = len(chars)+1
 
 
 def cracker(pasw):
+    ti = time.time()
     guess = ''
     tests = 1
     c = 0
@@ -19,12 +23,13 @@ def cracker(pasw):
             m = math.floor((y - c) / base)
             y = m
             guess = chars[(c - 1)] + guess
-            print(guess)
             if m == 0:
                 break
-
+        print(guess)
         if guess == pasw:
-            print('Got "{}" after {} tests'.format(guess, str(tests)))
+            tf = time.time()
+            print('Got "{}" after {} tests {}'.format(
+                guess, str(tests), stopwatch.stopwatch(ti, tf)))
             break
         else:
             tests += 1
