@@ -19,10 +19,9 @@ def cracker(pasw):
             m = math.floor((y - c) / base)
             y = m
             guess = chars[(c - 1)] + guess
-            print(guess)
             if m == 0:
                 break
-
+        print(guess)
         if guess == pasw:
             print('Got "{}" after {} tests'.format(guess, str(tests)))
             break

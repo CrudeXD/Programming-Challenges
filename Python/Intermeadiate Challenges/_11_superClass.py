@@ -33,5 +33,6 @@ class User:
 
 
 u1 = User('   DagaN', 'oRTOn  ', 17042001, 'male')
+u2 = User(' SHaWn      ', '  ortON ', 22081975, 'male')
 
-User.display(u1)
+User.display(u2)
